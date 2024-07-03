@@ -591,70 +591,69 @@
 		<section id="portfolio" class="portfolio">
 			<div class="portfolio-details">
 				<div class="section-heading text-center">
-					<h2>portfolio</h2>
+					<h2>Portfolio</h2>
 				</div>
 				<div class="container">
 					<div class="portfolio-content">
 						<div class="isotope">
 							<div class="row">
-
 								<div class="col-sm-4">
 									<div class="item">
-										<img src="/static/PORTFOLIO/Face-Detection-Using-URL.png" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="/static/PORTFOLIO/Face-Detection-Using-URL.png">
-												Face-Detection-Using-URL
-											</a>
-										</div><!-- /.isotope-overlay -->
+										<a href="/static/PORTFOLIO/Face-Detection-Using-URL.png">
+											<img src="/static/PORTFOLIO/Face-Detection-Using-URL.png" alt="portfolio image"/>
+										</a>
+										<div class="isotope-details">
+											<h3>Face Detection Using URL</h3>
+											<p>
+												I am using a custom model to create a FastAPI app, where the input is a URL or multiple URLs of images. The response includes the person's name, prediction accuracy, and image coordinates. For this project, I am using PyTorch, YOLOv8, and the FastAPI framework.
+											</p>
+											<a href="https://huggingface.co/WalidAlHassan/Face-Detection-Using-URL" target="_blank"><b>REPOSITORY</b></a>
+										</div><!-- /.isotope-details -->
 									</div><!-- /.item -->
-									{% comment %} <div class="item">
-										<img src="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png">
-												Find-Direction-Of-A-Bolt
-											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item --> {% endcomment %}
 								</div><!-- /.col -->
 
 								<div class="col-sm-4">
 									<div class="item">
+										<a href="/static/PORTFOLIO/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle.png">
 										<img src="/static/PORTFOLIO/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle.png" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="/static/PORTFOLIO/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle.png">
-												Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle
-											</a>
-										</div><!-- /.isotope-overlay -->
+										</a>
+										<div class="isotope-details">
+											<h3>Floor Object Rooms and Bed Direction Identification</h3>
+											<p>
+												In this project, I created an AI solution to help people identify their floor plans based on the angle. This model can detect a floor object (such as where a sofa unit is located) and also detect where a room (such as a kitchen) is located and where it should be located. To achieve this, I used PyTorch, Ultralytics, OpenCV, and pandas.
+											</p>
+											<a href="https://huggingface.co/WalidAlHassan/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-Vastu-angle" target="_blank"><b>REPOSITORY</b></a>
+										</div><!-- /.isotope-details -->
 									</div><!-- /.item -->
 								</div><!-- /.col -->
 
 								<div class="col-sm-4">
 									<div class="item">
+										<a href="/static/PORTFOLIO/GMP_Face_Recognation.png">
 										<img src="/static/PORTFOLIO/GMP_Face_Recognation.png" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="/static/PORTFOLIO/GMP_Face_Recognation.png">
-												Face_Recognation
-											</a>
-										</div><!-- /.isotope-overlay -->
+										</a>
+										<div class="isotope-details">
+											<h3>Face Recognition</h3>
+											<p>
+												In this project, I developed a solution for recognizing a person's face for login purposes. The system takes an image URL and a user ID as a request, then verifies the image against registered face data and the user ID. It generates a response in JSON format, indicating true if the user is valid. To achieve this, I used PyTorch, Dlib, and the FastAPI framework.
+											</p>
+											<a href="https://huggingface.co/WalidAlHassan/GMP_Face_Authentication" target="_blank"><b>REPOSITORY</b></a>
+										</div><!-- /.isotope-details -->
 									</div><!-- /.item -->
-									{% comment %} <div class="item">
-										<img src="assets/images/portfolio/p5.jpg" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="#">
-												web development
-											</a>
-										</div><!-- /.isotope-overlay -->
-									</div><!-- /.item --> {% endcomment %}
 								</div><!-- /.col -->
 
 								<div class="col-sm-4">
 									<div class="item">
+										<a href="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png">
 										<img src="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png" alt="portfolio image"/>
-										<div class="isotope-overlay">
-											<a href="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png">
-												Find-Direction-Of-A-Bolt
-											</a>
-										</div><!-- /.isotope-overlay -->
+										</a>
+										<div class="isotope-details">
+											<h3>Find Direction Of A Bolt</h3>
+											<p>
+												To find the bolt's exact angle on a surface and also find the bolt center point and head position using two yolov8 models. The request body is a bolt image URL and the response body is a JSON format where it has the center of a bolt and its angle. To make this project I am using detection and Oriented bounding box models from Ultralytics, Pytorch, And For deployment using FastApi.
+											</p>
+											<a href="https://huggingface.co/WalidAlHassan/Find-Direction-Of-A-Bolt" target="_blank"><b>REPOSITORY</b></a>
+										</div><!-- /.isotope-details -->
 									</div><!-- /.item -->
 								</div><!-- /.col -->
 
@@ -663,9 +662,25 @@
 					</div><!--/.gallery-content-->
 				</div><!--/.container-->
 			</div><!--/.portfolio-details-->
-
 		</section><!--/.portfolio-->
 		<!--portfolio end -->
+
+<style>
+    .isotope-details {
+		display: flex;
+        flex-direction: column;
+        align-items: center;
+		padding: 10px 0;
+
+    }
+    .isotope-details h3 {
+        margin: 10px 0 5px;
+    }
+    .isotope-details p {
+        margin: 5px 0 10px;
+    }
+</style>
+
 
 		{% comment %} <!--clients start -->
 		<section id="clients" class="clients">
