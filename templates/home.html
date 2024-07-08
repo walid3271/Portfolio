@@ -50,6 +50,8 @@
 			<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
 
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet" />
+
     </head>
 	
 	<body>
@@ -587,6 +589,15 @@
 		</section><!--/.profiles-->
 		<!--profiles end --> {% endcomment %}
 
+
+
+
+
+
+
+
+
+
 		<!--portfolio start -->
 		<section id="portfolio" class="portfolio">
 			<div class="portfolio-details">
@@ -599,7 +610,7 @@
 							<div class="row">
 								<div class="col-sm-4">
 									<div class="item">
-										<a href="/static/PORTFOLIO/Face-Detection-Using-URL.png">
+										<a href="/static/PORTFOLIO/Face-Detection-Using-URL.png" data-lightbox="portfolio" data-title="Face Detection Using URL">
 											<img src="/static/PORTFOLIO/Face-Detection-Using-URL.png" alt="portfolio image"/>
 										</a>
 										<div class="isotope-details">
@@ -614,8 +625,8 @@
 
 								<div class="col-sm-4">
 									<div class="item">
-										<a href="/static/PORTFOLIO/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle.png">
-										<img src="/static/PORTFOLIO/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle.png" alt="portfolio image"/>
+										<a href="/static/PORTFOLIO/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle.png" data-lightbox="portfolio" data-title="Floor Object Rooms and Bed Direction Identification">
+											<img src="/static/PORTFOLIO/Floor-Object-Rooms-and-Bed-direction-Identification-according-to-angle.png" alt="portfolio image"/>
 										</a>
 										<div class="isotope-details">
 											<h3>Floor Object Rooms and Bed Direction Identification</h3>
@@ -629,8 +640,8 @@
 
 								<div class="col-sm-4">
 									<div class="item">
-										<a href="/static/PORTFOLIO/GMP_Face_Recognation.png">
-										<img src="/static/PORTFOLIO/GMP_Face_Recognation.png" alt="portfolio image"/>
+										<a href="/static/PORTFOLIO/GMP_Face_Recognation.png" data-lightbox="portfolio" data-title="Face Recognition">
+											<img src="/static/PORTFOLIO/GMP_Face_Recognation.png" alt="portfolio image"/>
 										</a>
 										<div class="isotope-details">
 											<h3>Face Recognition</h3>
@@ -644,8 +655,8 @@
 
 								<div class="col-sm-4">
 									<div class="item">
-										<a href="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png">
-										<img src="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png" alt="portfolio image"/>
+										<a href="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png" data-lightbox="portfolio" data-title="Find Direction Of A Bolt">
+											<img src="/static/PORTFOLIO/Find-Direction-Of-A-Bolt.png" alt="portfolio image"/>
 										</a>
 										<div class="isotope-details">
 											<h3>Find Direction Of A Bolt</h3>
@@ -659,8 +670,8 @@
 
 								<div class="col-sm-4">
 									<div class="item">
-										<a href="/static/PORTFOLIO/Virtual-Mouse.png">
-										<img src="/static/PORTFOLIO/Virtual-Mouse.png" alt="portfolio image"/>
+										<a href="/static/PORTFOLIO/Virtual-Mouse.png" data-lightbox="portfolio" data-title="Virtual Mouse">
+											<img src="/static/PORTFOLIO/Virtual-Mouse.png" alt="portfolio image"/>
 										</a>
 										<div class="isotope-details">
 											<h3>Virtual Mouse</h3>
@@ -671,8 +682,6 @@
 										</div><!-- /.isotope-details -->
 									</div><!-- /.item -->
 								</div><!-- /.col -->
-
-
 							</div><!-- /.row -->
 						</div><!--/.isotope-->
 					</div><!--/.gallery-content-->
@@ -680,22 +689,23 @@
 			</div><!--/.portfolio-details-->
 		</section><!--/.portfolio-->
 		<!--portfolio end -->
+		
 
-<style>
-    .isotope-details {
-		display: flex;
-        flex-direction: column;
-        align-items: center;
-		padding: 10px 0;
+		<style>
+			.isotope-details {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding: 10px 0;
 
-    }
-    .isotope-details h3 {
-        margin: 10px 0 5px;
-    }
-    .isotope-details p {
-        margin: 5px 0 10px;
-    }
-</style>
+			}
+			.isotope-details h3 {
+				margin: 10px 0 5px;
+			}
+			.isotope-details p {
+				margin: 5px 0 10px;
+			}
+		</style>
 
 
 		{% comment %} <!--clients start -->
@@ -894,6 +904,8 @@
         
         <!--Custom JS-->
         <script src="static/js/custom.js"></script>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
         
     </body>
 	
