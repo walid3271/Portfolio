@@ -758,13 +758,6 @@
 								<div class="contact-form-head">
 									<h3>Send a Message</h3>
 								</div>
-								{% if messages %}
-									<div class="contact-status">
-										{% for message in messages %}
-											<p class="contact-status-message {{ message.tags }}">{{ message }}</p>
-										{% endfor %}
-									</div>
-								{% endif %}
 								<form id="gmail-contact-form" class="contact-form" action="{% url 'send_contact_email' %}" method="post" autocomplete="on">
 									{% csrf_token %}
 									<div class="row">
@@ -818,10 +811,30 @@
 				
 			</div><!--/.scroll-Top-->
 			
-        </footer><!--/.footer-copyright-->
+		</footer><!--/.footer-copyright-->
 		<!--footer-copyright end-->
+
+		{% if messages %}
+			<div class="toast-stack" aria-live="polite" aria-atomic="true">
+				{% for message in messages %}
+					<div class="contact-toast {{ message.tags }}" role="status">
+						<div class="contact-toast-icon">
+							{% if message.tags == "success" %}
+								<i class="fa fa-check" aria-hidden="true"></i>
+							{% else %}
+								<i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
+							{% endif %}
+						</div>
+						<div class="contact-toast-body">
+							<span class="contact-toast-label">{{ message.tags|title }}</span>
+							<p>{{ message }}</p>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% endif %}
 		
-		<!-- Include all js compiled plugins (below), or include individual files as needed -->
+        <!-- Include all js compiled plugins (below), or include individual files as needed -->
 
 		<script src="static/js/jquery.js"></script>
         
