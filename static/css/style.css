@@ -373,7 +373,6 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     
 }
 .skill-content{padding: 50px 0 80px;}
-.single-skill-content{padding-top: 100px;}
 .section-heading h2 {
     font-size: 24px;
     font-weight: 600;
@@ -381,58 +380,66 @@ span.single-timeline-horizontal.spacial-horizontal-line {width: 88px;}
     padding-bottom: 50px;
     border-bottom: 1px solid #404040;
 }
-.single-progress-txt {
-    display: flex;
+
+/* Skill Categories */
+.skill-category {
+    margin-bottom: 50px;
 }
-.single-progress-txt h3 {
-    width: 10%;
-    color: #d092ff;
-    position: relative;
-    top: 6px;
-    left: 20px;
-}
-.barWrapper {
-    font-weight: 400;
-    font-size: 16px;
+
+.category-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #d92cf9;
     text-transform: uppercase;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #d92cf9;
+    display: inline-block;
 }
-.progress {
-    border-radius:3px;
-    overflow: visible;
-    background: #333333;
-    height:8px;
-    margin-top: 15px;
-    width: 85%;
-    margin-bottom: 37px;
+
+/* Skill Badges */
+.skill-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 30px;
 }
-.progress-bar {
-   background: #b636ff;
-    border-radius: 3px;
-   -webkit-transition: width 1.5s ease-in-out;
-   -ms-transition: width 1.5s ease-in-out;
-   -moz-transition: width 1.5s ease-in-out;
-   -o-transition: width 1.5s ease-in-out;
-   transition: width 1.5s ease-in-out;
+
+.skill-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #d92cf9 0%, #b636ff 100%);
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: capitalize;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(217, 44, 249, 0.2);
 }
-.tooltip{
-   position:relative;
-   float:right;
+
+.skill-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(217, 44, 249, 0.4);
+    background: linear-gradient(135deg, #b636ff 0%, #d92cf9 100%);
 }
-.tooltip > .tooltip-inner {
-   background-color: transparent;
-   padding: 1px 5px;
-   color: #b636ff;
-   font-weight: 500;
-   font-size: 12px;
-   border-radius: 0;
+
+/* Skill Groups (for AI/ML sub-sections) */
+.skill-group {
+    margin-bottom: 25px;
 }
-.popOver + .tooltip > .tooltip-arrow {
-   border-left: 6px solid transparent;
-   border-right: 6px solid transparent;
-   border-top: 6px solid #fff;
-   bottom: -1px;
-   transform: translateX(-50%);
-   margin-left: 0;
+
+.skill-group-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #bb86fc;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.skill-group .skill-badges {
+    margin-bottom: 20px;
 }
 
 /*-------------------------------------
