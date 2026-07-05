@@ -15,10 +15,8 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 SECRET_KEY = 'django-insecure-d8b=t76c@lx7zw^)5oz$g480)@lp()zqc8%a=c=7fa!-$24eua'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-# ALLOWED_HOSTS = ['.vercel.app']
-ALLOWED_HOSTS = ['*']
+DEBUG = bool(int(os.environ.get('DJANGO_DEBUG', 1)))
+ALLOWED_HOSTS = ['walid.vercel.app', '127.0.0.1']
 
 
 # Application definition
