@@ -1,10 +1,11 @@
 {
     "version": 2,
-    "functions": {
-        "Portfolio/wsgi.py": {
-            "runtime": "python3.12"
+    "builds": [
+        {
+            "src": "Portfolio/wsgi.py",
+            "use": "@vercel/python"
         }
-    },
+    ],
     "routes": [
         {
             "src": "/(.*)",
