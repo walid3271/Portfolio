@@ -1,5 +1,8 @@
 from pathlib import Path
 import os
+import warnings
+
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,17 +15,36 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-d8b=t76c@lx7zw^)5oz$g480)@lp()zqc8%a=c=7fa!-$24eua'
+# Set DJANGO_DEBUG=1 locally. Debug is OFF unless explicitly enabled.
+DEBUG = os.environ.get('DJANGO_DEBUG', '0').lower() in ('1', 'true', 'yes', 'on')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = bool(int(os.environ.get('DJANGO_DEBUG', 1)))
-ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1']
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
+if not SECRET_KEY:
+    if DEBUG:
+        SECRET_KEY = 'dev-only-insecure-key-do-not-use-in-production'
+    else:
+        raise ImproperlyConfigured('Set the DJANGO_SECRET_KEY environment variable.')
+
+ALLOWED_HOSTS = ['.vercel.app', '127.0.0.1', 'localhost']
+_extra_hosts = os.environ.get('DJANGO_ALLOWED_HOSTS', '')
+ALLOWED_HOSTS += [h.strip() for h in _extra_hosts.split(',') if h.strip()]
+CSRF_TRUSTED_ORIGINS = ['https://*.vercel.app'] + [
+    f'https://{h.strip()}' for h in _extra_hosts.split(',') if h.strip()
+]
+
+if not DEBUG:
+    SECURE_SSL_REDIRECT = False  # Vercel terminates TLS and redirects itself
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 31536000
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+    SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
@@ -34,6 +56,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -101,8 +124,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR, ]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+# STATIC_ROOT is never created (files are served via finders), so silence WhiteNoise's notice.
+warnings.filterwarnings('ignore', message='No directory at', module='whitenoise.base')
+# Serve straight from STATICFILES_DIRS so no collectstatic build step is needed on Vercel.
+WHITENOISE_USE_FINDERS = True
+WHITENOISE_MAX_AGE = 60 * 60 * 24 * 30
 
 # Email configuration for Gmail SMTP
 # Use a Gmail App Password in EMAIL_HOST_PASSWORD, not your normal account password.
