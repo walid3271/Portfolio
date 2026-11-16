@@ -13,8 +13,8 @@ EXPERIENCE = [
         "company": "Omicon Group",
         "location": "Bashundhara R/A, Dhaka, Bangladesh · On-site",
         "points": [
-            "Design, build and deploy production AI systems across computer vision and LLM / RAG.",
-            "Own model quality, architecture and API delivery with PyTorch, FastAPI and LangChain.",
+            "Work with multi-agent AI systems.",
+            "Build fully autonomous AI systems in which the agent communicates bidirectionally with both consumers and business personnel.",
         ],
     },
     {
@@ -23,7 +23,9 @@ EXPERIENCE = [
         "company": "RWS",
         "location": "Remote",
         "points": [
-            "Evaluate and improve the quality of AI model outputs for RWS.",
+            "Audit the accuracy of voice LLM models.",
+            "Analyse AI model responses across different languages.",
+            "Review and analyse video generation results.",
         ],
     },
     {
@@ -32,9 +34,10 @@ EXPERIENCE = [
         "company": "HawkEyes Digital Monitoring Limited",
         "location": "Uttara, Dhaka, Bangladesh · On-site",
         "points": [
-            "Built and deployed computer vision and NLP systems (detection, segmentation, pose estimation, face recognition) behind FastAPI services.",
-            "Designed LLM applications with RAG, AI agents and LangChain/LangGraph pipelines.",
-            "Coordinated AI projects from data collection and model training to production deployment.",
+            "Owned AI projects end to end: image processing, model fine-tuning, accuracy measurement, API pipelines, performance analysis and production deployment.",
+            "Built audio AI systems: text-to-speech (TTS), speech-to-text (STT), voice model fine-tuning, speech recognition and speaker diarization.",
+            "Identified individual employees from multi-person audio recordings.",
+            "Designed and built AI agents, including a calling AI agent.",
         ],
     },
     {
@@ -43,8 +46,10 @@ EXPERIENCE = [
         "company": "HawkEyes Digital Monitoring Limited",
         "location": "Uttara, Dhaka, Bangladesh · On-site",
         "points": [
-            "Delivered real-time video analytics and object detection solutions with PyTorch and Ultralytics YOLO.",
-            "Worked on cyber-attack detection and social media analysis for mental health, exposed through REST APIs.",
+            "Built vision AI response API pipelines and served model inference data to the backend team through REST APIs.",
+            "Fine-tuned computer vision models and ran evaluations to track and improve accuracy.",
+            "Developed real-time video streaming analytics: object tracking, distance measurement and speed analysis.",
+            "Analysed project bugs and model responses to find root causes and improve reliability.",
         ],
     },
     {
@@ -53,7 +58,8 @@ EXPERIENCE = [
         "company": "HawkEyes Digital Monitoring Limited",
         "location": "Uttara, Dhaka, Bangladesh",
         "points": [
-            "Built chatbots with LangChain and Streamlit and prototyped detection models.",
+            "Worked on image processing and data annotation.",
+            "Trained computer vision models.",
         ],
     },
 ]
