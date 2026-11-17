@@ -29,7 +29,7 @@ EXPERIENCE = [
         ],
     },
     {
-        "period": "Aug 2025 - Aug 2026",
+        "period": "Jul 2025 - Aug 2026",
         "role": "Mid-Level AI Executive",
         "company": "HawkEyes Digital Monitoring Limited",
         "location": "Uttara, Dhaka, Bangladesh · On-site",
@@ -41,7 +41,7 @@ EXPERIENCE = [
         ],
     },
     {
-        "period": "Jul 2024 - Aug 2025",
+        "period": "Jul 2024 - Jun 2025",
         "role": "AI Engineer Executive",
         "company": "HawkEyes Digital Monitoring Limited",
         "location": "Uttara, Dhaka, Bangladesh · On-site",
